@@ -39,7 +39,7 @@ with open(quotes_file, 'w', encoding='utf-8') as file:
     json.dump(quotes_data, file, indent=4)
 
 # 7. run the regenerate script
-subprocess.run(['rn'], check=True)
+subprocess.run(['python', 'scripts/bin/rn'], check=True)
 
 
 # 7. Make a git commit
