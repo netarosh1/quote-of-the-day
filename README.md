@@ -11,9 +11,10 @@ Goal: randomly pick a quote for the day from all the stored quotes.
 Now in the [first](#V1) version, we were choosing a random quote based on an easy, non-uniform random function.
 This used to lead to some quotes repeating far often and some not coming up at all. 
 
-To make it uniform, I created `script/bin/rn`, which will generate files `quotes/{month}.json`, 
-which can be indexed by the day in the `js` script to choose the index into the `quotes.json`.
-The indices are randomly permuted and gets assigned to the day, so we get roughly uniform distribution.
+To make it uniform, I created `script/bin/rn`, which generates files `quotes/{month}.json`.
+These can be indexed by the day in the `js` script to choose an index into `quotes.json`.
+Every possible calendar day, including February 29, gets an index; the quote indices are shuffled
+and reused to distribute quotes roughly uniformly.
 
 The new `json` files can be accessed at `https://raw.githubusercontent.com/svaderia/quote-of-the-day/main/quotes/{month}.json`.
 
